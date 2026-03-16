@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ms. Reese 11th Grade Business</title>
+<style>
+:root{--navy:#0d1b3e;--red:#c0392b;--gold:#f0a500;--cream:#fdf8f0;--light:#f4f1eb;--muted:#6b7280;--border:#e2d9c8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:system-ui,sans-serif;background:var(--cream);color:#1a1a2e;}
+nav{background:var(--navy);position:sticky;top:0;z-index:200;box-shadow:0 2px 20px rgba(0,0,0,.3);}
+.ni{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;height:58px;}
+.nb{font-size:1rem;font-weight:700;color:var(--gold);cursor:pointer;white-space:nowrap;}
+.nl{display:flex;gap:2px;list-style:none;flex-wrap:wrap;}
+.nl button{background:none;border:none;color:rgba(255,255,255,.72);font-size:.8rem;font-weight:500;padding:.38rem .75rem;border-radius:6px;cursor:pointer;}
+.nl button:hover,.nl button.active{background:rgba(240,165,0,.15);color:var(--gold);}
+.pg{display:none;}.pg.active{display:block;animation:fi .3s ease;}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.ph{background:var(--navy);padding:2.5rem 1.5rem 2rem;text-align:center;position:relative;overflow:hidden;}
+.ph::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 100% at 50% 130%,rgba(192,57,43,.2) 0%,transparent 60%);}
+.ph h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;color:#fff;position:relative;}
+.ph p{color:rgba(255,255,255,.6);margin-top:.4rem;font-size:.9rem;position:relative;}
+.cx{max-width:960px;margin:0 auto;padding:2.5rem 1.5rem;}
+.cs{max-width:740px;margin:0 auto;padding:2.5rem 1.5rem;}
+.sl{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem;}
+.st{font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:1.4rem;}
+.btn{display:inline-block;padding:.65rem 1.5rem;border-radius:8px;font-size:.86rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;text-decoration:none;font-family:inherit;color:#fff;}
+.bn{background:var(--navy);}.bn:hover{background:#162347;}
+.br{background:var(--red);}.br:hover{background:#a93226;}
+.bg{background:var(--light);color:#1a1a2e;border:1px solid var(--border);}
+.bw{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);}
+.badge{display:inline-block;padding:.18rem .55rem;border-radius:100px;font-size:.67rem;font-weight:700;text-transform:uppercase;}
+.bdr{background:rgba(192,57,43,.1);color:var(--red);}
+.bdg{background:rgba(240,165,0,.13);color:#9a6500;}
+.bdn{background:rgba(13,27,62,.08);color:var(--navy);}
+hr.dv{border:none;height:1px;background:var(--border);max-width:960px;margin:0 auto;}
+.hero{background:var(--navy);position:relative;overflow:hidden;padding:4.5rem 2rem 3.5rem;text-align:center;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 15% 50%,rgba(192,57,43,.2) 0%,transparent 65%),radial-gradient(ellipse 55% 65% at 85% 40%,rgba(240,165,0,.13) 0%,transparent 65%);}
+.hb{display:inline-block;background:rgba(240,165,0,.14);border:1px solid rgba(240,165,0,.32);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.36rem 1rem;border-radius:100px;margin-bottom:1.2rem;position:relative;}
+.hero h1{font-size:clamp(2rem,6vw,3.6rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;position:relative;}
+.hero h1 span{color:var(--gold);}
+.hero p{color:rgba(255,255,255,.62);font-size:.98rem;max-width:460px;margin:0 auto 2rem;line-height:1.75;position:relative;}
+.hc{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;position:relative;}
+.sb{background:#fff;border-bottom:1px solid var(--border);}
+.sbi{max-width:960px;margin:0 auto;padding:.9rem 1.5rem;display:flex;justify-content:center;flex-wrap:wrap;}
+.si{display:flex;align-items:center;gap:.45rem;padding:0 1.25rem;border-right:1px solid var(--border);font-size:.82rem;color:var(--muted);}
+.si:last-child{border-right:none;}.si strong{color:var(--navy);font-weight:600;}
+.hcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;}
+.hcard{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.3rem;cursor:pointer;transition:all .22s;position:relative;overflow:hidden;}
+.hcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.hcard:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(13,27,62,.1);}.hcard:hover::after{transform:scaleX(1);}
+.hcard .ic{font-size:1.6rem;margin-bottom:.7rem;}
+.hcard h3{font-size:.98rem;font-weight:700;color:var(--navy);margin-bottom:.3rem;}
+.hcard p{color:var(--muted);font-size:.8rem;line-height:1.6;}
+.el{display:flex;flex-direction:column;gap:.85rem;}
+.ec{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;display:flex;gap:1.1rem;align-items:flex-start;transition:all .22s;}
+.ec:hover{transform:translateX(4px);box-shadow:0 8px 20px rgba(13,27,62,.07);}
+.edate{background:var(--navy);color:#fff;border-radius:8px;text-align:center;padding:.55rem .7rem;min-width:50px;flex-shrink:0;}
+.edate .mo{font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
+.edate .dy{font-size:1.5rem;font-weight:900;line-height:1;}
+.ei{flex:1;}.ei h3{font-size:.98rem;font-weight:700;color:var(--navy);margin-bottom:.22rem;}
+.ei p{color:var(--muted);font-size:.82rem;line-height:1.6;}
+.ei .tg{margin-top:.38rem;display:flex;gap:.32rem;flex-wrap:wrap;}
+.ea{display:flex;gap:.35rem;flex-shrink:0;}
+.ib{background:none;border:1px solid var(--border);border-radius:6px;padding:.28rem .45rem;cursor:pointer;font-size:.75rem;color:var(--muted);}
+.ib:hover{background:var(--light);color:var(--navy);}.ib.dl:hover{background:#fef2f2;color:var(--red);}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.cc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.75rem;}
+.cc h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:1rem;}
+.cr{display:flex;align-items:center;gap:.7rem;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.88rem;}
+.cr:last-of-type{border-bottom:none;}.ci{font-size:1rem;width:26px;text-align:center;}
+.cl{color:var(--muted);font-size:.74rem;display:block;margin-bottom:.08rem;}
+.cv{color:var(--navy);font-weight:500;}
+.fg{margin-bottom:.9rem;}.fg label{display:block;font-size:.78rem;font-weight:600;color:var(--navy);margin-bottom:.35rem;}
+.fg input,.fg textarea{width:100%;border:1px solid var(--border);border-radius:8px;padding:.6rem .85rem;font-family:inherit;font-size:.86rem;color:#1a1a2e;background:var(--cream);outline:none;}
+.fg textarea{resize:vertical;min-height:100px;}
+.rl{display:flex;flex-direction:column;gap:.85rem;}
+.rc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;display:flex;align-items:center;gap:1rem;transition:all .22s;text-decoration:none;color:inherit;}
+.rc:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,27,62,.1);border-color:var(--navy);}
+.ri{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;}
+.rib{background:rgba(13,27,62,.08);}.rir{background:rgba(192,57,43,.1);}.rig{background:rgba(240,165,0,.12);}
+.rif{flex:1;}.rif h3{font-size:.97rem;font-weight:700;color:var(--navy);margin-bottom:.2rem;}.rif p{color:var(--muted);font-size:.8rem;}
+.ra{margin-left:auto;color:var(--muted);font-size:1rem;flex-shrink:0;}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;align-items:center;justify-content:center;padding:1rem;}
+.mo.open{display:flex;}
+.md{background:#fff;border-radius:14px;width:100%;max-width:560px;max-height:88vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.25);}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:#fff;}
+.mh h3{font-size:1.1rem;font-weight:700;color:var(--navy);}
+.mc{background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--muted);padding:.2rem .4rem;border-radius:6px;}
+.mb{padding:1.4rem 1.5rem;}
+.mf{padding:.9rem 1.5rem;border-top:1px solid var(--border);display:flex;gap:.65rem;justify-content:flex-end;background:#fff;}
+.fr{margin-bottom:1rem;}.fr label{display:block;font-size:.78rem;font-weight:600;color:var(--navy);margin-bottom:.35rem;}
+.fr input,.fr textarea,.fr select{width:100%;border:1px solid var(--border);border-radius:8px;padding:.58rem .82rem;font-family:inherit;font-size:.86rem;color:#1a1a2e;background:var(--cream);outline:none;}
+.fr textarea{resize:vertical;min-height:75px;}.fp{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.editbar{background:var(--gold);padding:.5rem 1.5rem;text-align:center;font-size:.8rem;font-weight:600;color:var(--navy);display:none;}
+.editbar.show{display:block;}
+.toast{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--navy);color:#fff;padding:.65rem 1.1rem;border-radius:9px;font-size:.84rem;font-weight:500;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;}
+.toast.show{opacity:1;}
+.as{background:var(--navy);padding:2.75rem 1.5rem;}
+.ai{max-width:960px;margin:0 auto;display:flex;gap:1.75rem;align-items:center;flex-wrap:wrap;}
+.av{width:76px;height:76px;background:rgba(240,165,0,.15);border:2px solid rgba(240,165,0,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.at h3{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.38rem;}
+.at p{color:rgba(255,255,255,.62);line-height:1.75;font-size:.9rem;max-width:560px;}
+footer{background:var(--navy);color:rgba(255,255,255,.42);text-align:center;padding:1.5rem;font-size:.8rem;margin-top:2.5rem;}
+footer span{color:var(--gold);}
+@media(max-width:640px){.cg{grid-template-columns:1fr;}.si{padding:0 .6rem;font-size:.76rem;}.ea{display:none;}}
+</style>
+</head>
+<body>
+<div class="editbar" id="editbar">Edit Mode ON - Changes are live for everyone instantly.</div>
+<nav>
+  <div class="ni">
+    <div class="nb" id="goHome">Ms. Reese's Class</div>
+    <ul class="nl">
+      <li><button id="n0" class="active">Home</button></li>
+      <li><button id="n1">Events</button></li>
+      <li><button id="n2">Message Me</button></li>
+      <li><button id="n3">Resources</button></li>
+    </ul>
+  </div>
+</nav>
+<div id="p0" class="pg active">
+  <section class="hero">
+    <div class="hb">Arlington ISD - 11th Grade Business - 2025-2026</div>
+    <h1>Welcome to<br><span>Our Classroom</span></h1>
+    <p>Your hub for staying connected, informed, and involved in your student's business education.</p>
+    <div class="hc">
+      <button class="btn br" id="hE">Upcoming Events</button>
+      <button class="btn bw" id="hM">Message Ms. Reese</button>
+    </div>
+  </section>
+  <div class="sb"><div class="sbi">
+    <div class="si"><strong>11th Grade Business</strong></div>
+    <div class="si">Arlington ISD</div>
+    <div class="si">Office Hours: <strong>By Appointment Only</strong></div>
+    <div class="si" id="siEmail"></div>
+  </div></div>
+  <section class="cx">
+    <div class="sl">Quick Access</div>
+    <div class="st">Everything You Need</div>
+    <div class="hcards">
+      <div class="hcard" id="cE"><div class="ic">&#128197;</div><h3>Upcoming Events</h3><p>Tests, projects, field trips, and school-wide happenings.</p></div>
+      <div class="hcard" id="cM"><div class="ic">&#9993;&#65039;</div><h3>Message Me</h3><p>Reach Ms. Reese directly anytime.</p></div>
+      <div class="hcard" id="cR"><div class="ic">&#128279;</div><h3>Resources</h3><p>Grade portal, school website, and parent tools.</p></div>
+      <div class="hcard"><div class="ic">&#9200;</div><h3>Office Hours</h3><p>By appointment only. Email to schedule.</p></div>
+    </div>
+  </section>
+  <hr class="dv">
+  <div class="as"><div class="ai">
+    <div class="av">&#128105;&#8205;&#128188;</div>
+    <div class="at">
+      <h3>Hello, Families!</h3>
+      <p>Welcome to our 11th Grade Business page! We cover real-world skills - entrepreneurship, finance, marketing, and professional communication. Your involvement makes a huge difference. Don't hesitate to reach out anytime!</p>
+    </div>
+  </div></div>
+</div>
+<div id="p1" class="pg">
+  <div class="ph"><h2>Upcoming Events</h2><p>Mark your calendar - here's what's coming up!</p></div>
+  <div class="cs">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4rem;flex-wrap:wrap;gap:.75rem;">
+      <div><div class="sl">Class Calendar</div><div class="st" style="margin-bottom:0">All Upcoming Events</div></div>
+      <button class="btn bn" id="addEvt" style="display:none">+ Add Event</button>
+    </div>
+    <div class="el" id="evList"></div>
+  </div>
+</div>
+<div id="p2" class="pg">
+  <div class="ph"><h2>Message Me</h2><p>I respond within 24-48 hours on school days.</p></div>
+  <div class="cs"><div class="cg">
+    <div class="cc">
+      <h3>Contact Information</h3>
+      <div class="cr"><div class="ci">&#9993;</div><div><span class="cl">Email</span><a id="emlA" class="cv" style="text-decoration:underline;"></a></div></div>
+      <div class="cr"><div class="ci">&#128222;</div><div><span class="cl">School Phone</span><span class="cv">(817) 555-0100</span></div></div>
+      <div class="cr"><div class="ci">&#128336;</div><div><span class="cl">Office Hours</span><span class="cv">By Appointment Only</span></div></div>
+      <div class="cr"><div class="ci">&#128205;</div><div><span class="cl">District</span><span class="cv">Arlington ISD</span></div></div>
+      <div style="margin-top:1.1rem"><a id="emlB" class="btn bn" style="width:100%;display:block;text-align:center">Email Me Directly</a></div>
+    </div>
+    <div class="cc">
+      <h3>Send a Message</h3>
+      <div class="fg"><label>Your Name</label><input type="text" id="mN" placeholder="Parent / Guardian name"></div>
+      <div class="fg"><label>Your Email (for reply)</label><input type="email" id="mE" placeholder="your@email.com"></div>
+      <div class="fg"><label>Subject</label><input type="text" id="mS" placeholder="e.g. Question about project"></div>
+      <div class="fg"><label>Message</label><textarea id="mB" placeholder="Type your message here..."></textarea></div>
+      <a id="sendBtn" class="btn br" style="width:100%;display:block;text-align:center;cursor:pointer">Send Message to Ms. Reese</a>
+      <p style="font-size:.74rem;color:var(--muted);margin-top:.65rem;text-align:center">Opens your email app. Responses within 24-48 hours.</p>
+    </div>
+  </div></div>
+</div>
+<div id="p3" class="pg">
+  <div class="ph"><h2>Resources &amp; Links</h2><p>Everything you need, all in one place.</p></div>
+  <div class="cs">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4rem;flex-wrap:wrap;gap:.75rem;">
+      <div><div class="sl">Helpful Links</div><div class="st" style="margin-bottom:0">Parent &amp; Student Resources</div></div>
+      <button class="btn bn" id="addRes" style="display:none">+ Add Link</button>
+    </div>
+    <div class="rl" id="resList"></div>
+  </div>
+</div>
+<div class="mo" id="evtMo">
+  <div class="md">
+    <div class="mh"><h3 id="evtMoT">Add Event</h3><button class="mc" id="evtMoX">X</button></div>
+    <div class="mb">
+      <input type="hidden" id="evtId">
+      <div class="fr"><label>Event Title</label><input type="text" id="evtTitle" placeholder="e.g. Chapter 5 Test"></div>
+      <div class="fr"><label>Description</label><textarea id="evtDesc" placeholder="Details..."></textarea></div>
+      <div class="fp">
+        <div class="fr"><label>Month</label>
+          <select id="evtMon"><option value="Jan">January</option><option value="Feb">February</option><option value="Mar">March</option><option value="Apr">April</option><option value="May">May</option><option value="Jun">June</option><option value="Jul">July</option><option value="Aug">August</option><option value="Sep">September</option><option value="Oct">October</option><option value="Nov">November</option><option value="Dec">December</option></select>
+        </div>
+        <div class="fr"><label>Day</label><input type="number" id="evtDay" min="1" max="31" placeholder="15"></div>
+      </div>
+      <div class="fr"><label>Category</label>
+        <select id="evtCat"><option value="a">Assessment</option><option value="m">Major Event</option><option value="f">Field Trip</option><option value="p">Parent Event</option><option value="s">Assignment</option><option value="c">Celebration</option><option value="o">Other</option></select>
+      </div>
+    </div>
+    <div class="mf"><button class="btn bg" id="evtMoC">Cancel</button><button class="btn bn" id="evtMoS">Save Event</button></div>
+  </div>
+</div>
+<div class="mo" id="resMo">
+  <div class="md">
+    <div class="mh"><h3 id="resMoT">Add Link</h3><button class="mc" id="resMoX">X</button></div>
+    <div class="mb">
+      <input type="hidden" id="resId">
+      <div class="fr"><label>Title</label><input type="text" id="resTitle" placeholder="e.g. TxConnect Grade Portal"></div>
+      <div class="fr"><label>Description</label><input type="text" id="resDesc" placeholder="Brief description"></div>
+      <div class="fr"><label>URL (include https://)</label><input type="url" id="resUrl" placeholder="https://..."></div>
+      <div class="fp">
+        <div class="fr"><label>Icon (emoji)</label><input type="text" id="resIcon" placeholder="&#128202;" maxlength="4"></div>
+        <div class="fr"><label>Color</label><select id="resCol"><option value="rib">Blue</option><option value="rir">Red</option><option value="rig">Gold</option></select></div>
+      </div>
+    </div>
+    <div class="mf"><button class="btn bg" id="resMoC">Cancel</button><button class="btn bn" id="resMoS">Save Link</button></div>
+  </div>
+</div>
+<div class="mo" id="loginMo" style="z-index:600">
+  <div class="md" style="max-width:380px">
+    <div class="mh"><h3>Teacher Login</h3><button class="mc" id="loginClose">X</button></div>
+    <div class="mb">
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.2rem">Enter your password to access edit mode.</p>
+      <div class="fr"><label>Password</label><input type="password" id="loginPw" placeholder="Enter password"></div>
+      <div id="loginErr" style="color:var(--red);font-size:.8rem;margin-top:.4rem;display:none">Incorrect password. Try again.</div>
+    </div>
+    <div class="mf"><button class="btn bg" id="loginCancel">Cancel</button><button class="btn bn" id="loginSubmit">Login</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<footer>
+  Made with love for the families of <span>Ms. Reese's 11th Grade Business Class</span> - Arlington ISD - 2025-2026
+  <br><span style="font-size:.75rem;margin-top:.4rem;display:inline-block;">&#169; 2025 Ms. Reese · Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.6);text-decoration:underline;">CC BY-NC 4.0</a></span>
+  <br><button id="footerEditBtn" style="margin-top:.75rem;background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.4);font-size:.72rem;padding:.3rem .8rem;border-radius:6px;cursor:pointer;font-family:inherit;">Teacher Login</button>
+</footer>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script>
+(function(){
+var u='treese',d='aisd.net',E=u+'@'+d;
+var PW='Allinthefamily247!!';
+var tagMap={a:{l:'Assessment',c:'bdr'},m:{l:'Major Event',c:'bdg'},f:{l:'Field Trip',c:'bdn'},p:{l:'Parent Event',c:'bdg'},s:{l:'Assignment',c:'bdn'},c:{l:'Celebration',c:'bdg'},o:{l:'Other',c:'bdn'}};
+var defRes=[
+  {id:'r1',t:'TxConnect - Student Grade Portal',d:'Check grades, attendance, and scores in real time.',u:'https://txconnect.aisd.net',i:'&#128202;',c:'rib'},
+  {id:'r2',t:'Arlington ISD Official Website',d:'News, district calendar, policies, and updates.',u:'https://www.aisd.net',i:'&#127979;',c:'rir'},
+  {id:'r3',t:'AISD Parent Resources',d:'Forms, enrollment info, meal accounts, and more.',u:'https://www.aisd.net/parents',i:'&#128106;',c:'rig'},
+  {id:'r4',t:'School Lunch Menu and Meal Accounts',d:'View weekly menus and manage meal account balance.',u:'https://www.aisd.net/departments/nutrition-services/',i:'&#127869;&#65039;',c:'rib'},
+  {id:'r5',t:'Transportation and Bus Routes',d:'Find bus stop, route number, and pickup times.',u:'https://www.aisd.net/departments/transportation/',i:'&#128652;',c:'rir'},
+  {id:'r6',t:'Technology and Device Help',d:'Chromebook support, password resets, and tech help.',u:'https://www.aisd.net/departments/technology/help-desk/',i:'&#128187;',c:'rig'}
+];
+var evts=[],ress=[],editMode=false,db=null;
+
+/* FIREBASE */
+try{
+  firebase.initializeApp({
+    apiKey:'AIzaSyBQ22_qNodJwSegx5LPbQ3k3BgnXGiCGlM',
+    authDomain:'ms-reese-class.firebaseapp.com',
+    projectId:'ms-reese-class',
+    storageBucket:'ms-reese-class.firebasestorage.app',
+    messagingSenderId:'238568577302',
+    appId:'1:238568577302:web:62ccc8c8397acec761d837'
+  });
+  db=firebase.firestore();
+}catch(e){console.warn('Firebase init error',e);}
+
+function fbLoad(){
+  if(!db){renderEvts();renderRes();return;}
+  db.collection('events').get().then(function(snap){
+    evts=[];
+    snap.forEach(function(doc){evts.push(Object.assign({id:doc.id},doc.data()));});
+    evts.sort(function(a,b){return (a.sortKey||'')>(b.sortKey||'')?1:-1;});
+    renderEvts();
+  }).catch(function(e){console.warn(e);renderEvts();});
+  db.collection('resources').get().then(function(snap){
+    if(snap.empty){ress=defRes;seedRes();renderRes();return;}
+    ress=[];
+    snap.forEach(function(doc){ress.push(Object.assign({id:doc.id},doc.data()));});
+    ress.sort(function(a,b){return (a.order||0)-(b.order||0);});
+    renderRes();
+  }).catch(function(e){console.warn(e);ress=defRes;renderRes();});
+}
+
+function seedRes(){
+  if(!db)return;
+  defRes.forEach(function(r,i){
+    db.collection('resources').doc(r.id).set({t:r.t,d:r.d,u:r.u,i:r.i,c:r.c,order:i});
+  });
+}
+
+/* NAV */
+function showPg(n){
+  document.querySelectorAll('.pg').forEach(function(p){p.classList.remove('active');});
+  [0,1,2,3].forEach(function(i){document.getElementById('n'+i).classList.remove('active');});
+  document.getElementById('p'+n).classList.add('active');
+  document.getElementById('n'+n).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* EDIT */
+function toggleEdit(){
+  editMode=!editMode;
+  document.getElementById('editbar').classList.toggle('show',editMode);
+  document.getElementById('footerEditBtn').textContent=editMode?'Exit Edit Mode':'Teacher Login';
+  document.getElementById('addEvt').style.display=editMode?'inline-block':'none';
+  document.getElementById('addRes').style.display=editMode?'inline-block':'none';
+  renderEvts();renderRes();
+  toast(editMode?'Edit mode on!':'Changes saved!');
+}
+
+/* EVENTS */
+function renderEvts(){
+  var el=document.getElementById('evList');
+  if(!evts.length){el.innerHTML='<div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:2.5rem;text-align:center;color:var(--muted)">No upcoming events.'+(editMode?' Click + Add Event above.':'')+'</div>';return;}
+  el.innerHTML=evts.map(function(e){
+    var tg=tagMap[e.cat]||tagMap.o;
+    var ac=editMode?'<div class="ea"><button class="ib" data-ee="'+e.id+'">Edit</button><button class="ib dl" data-de="'+e.id+'">Delete</button></div>':'';
+    return '<div class="ec"><div class="edate"><div class="mo">'+e.mon+'</div><div class="dy">'+e.day+'</div></div><div class="ei"><h3>'+e.title+'</h3><p>'+e.desc+'</p><div class="tg"><span class="badge '+tg.c+'">'+tg.l+'</span></div></div>'+ac+'</div>';
+  }).join('');
+  el.querySelectorAll('[data-ee]').forEach(function(b){b.onclick=function(){editEvt(b.dataset.ee);};});
+  el.querySelectorAll('[data-de]').forEach(function(b){b.onclick=function(){delEvt(b.dataset.de);};});
+}
+function openAddEvt(){
+  document.getElementById('evtMoT').textContent='Add Event';
+  document.getElementById('evtId').value='';
+  ['evtTitle','evtDesc','evtDay'].forEach(function(i){document.getElementById(i).value='';});
+  document.getElementById('evtMon').value='Mar';
+  document.getElementById('evtCat').value='a';
+  document.getElementById('evtMo').classList.add('open');
+}
+function editEvt(id){
+  var e=evts.find(function(x){return x.id===id;});if(!e)return;
+  document.getElementById('evtMoT').textContent='Edit Event';
+  document.getElementById('evtId').value=id;
+  document.getElementById('evtTitle').value=e.title;
+  document.getElementById('evtDesc').value=e.desc;
+  document.getElementById('evtMon').value=e.mon;
+  document.getElementById('evtDay').value=e.day;
+  document.getElementById('evtCat').value=e.cat;
+  document.getElementById('evtMo').classList.add('open');
+}
+function saveEvt(){
+  var t=document.getElementById('evtTitle').value.trim();
+  var day=parseInt(document.getElementById('evtDay').value);
+  if(!t||!day){alert('Please fill in title and day.');return;}
+  var id=document.getElementById('evtId').value;
+  var mon=document.getElementById('evtMon').value;
+  var cat=document.getElementById('evtCat').value;
+  var desc=document.getElementById('evtDesc').value.trim();
+  var data={title:t,desc:desc,mon:mon,day:day,cat:cat,sortKey:mon+String(day).padStart(2,'0')};
+  closeM('evtMo');toast('Saving...');
+  var ref=id?db.collection('events').doc(id):db.collection('events').doc();
+  ref.set(data).then(function(){
+    data.id=ref.id;
+    if(id){var i=evts.findIndex(function(x){return x.id===id;});if(i>-1)evts[i]=data;}else{evts.push(data);}
+    evts.sort(function(a,b){return (a.sortKey||'')>(b.sortKey||'')?1:-1;});
+    renderEvts();toast(id?'Event updated!':'Event added!');
+  }).catch(function(e){toast('Error saving. Check Firebase rules.');console.warn(e);});
+}
+function delEvt(id){
+  if(!confirm('Delete this event?'))return;
+  toast('Deleting...');
+  db.collection('events').doc(id).delete().then(function(){
+    evts=evts.filter(function(e){return e.id!==id;});
+    renderEvts();toast('Event deleted.');
+  }).catch(function(e){toast('Error deleting.');console.warn(e);});
+}
+
+/* RESOURCES */
+function renderRes(){
+  var el=document.getElementById('resList');
+  if(!ress.length){el.innerHTML='<div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:2.5rem;text-align:center;color:var(--muted)">No resources yet.'+(editMode?' Click + Add Link above.':'')+'</div>';return;}
+  el.innerHTML=ress.map(function(r){
+    if(editMode){return '<div class="rc" style="cursor:default"><div class="ri '+r.c+'">'+r.i+'</div><div class="rif"><h3>'+r.t+'</h3><p>'+r.d+'</p></div><div style="display:flex;gap:.35rem;flex-shrink:0"><button class="ib" data-er="'+r.id+'">Edit</button><button class="ib dl" data-dr="'+r.id+'">Delete</button></div></div>';}
+    return '<a class="rc" href="'+r.u+'" target="_blank" rel="noopener noreferrer"><div class="ri '+r.c+'">'+r.i+'</div><div class="rif"><h3>'+r.t+'</h3><p>'+r.d+'</p></div><div class="ra">&#8594;</div></a>';
+  }).join('');
+  el.querySelectorAll('[data-er]').forEach(function(b){b.onclick=function(){editRes(b.dataset.er);};});
+  el.querySelectorAll('[data-dr]').forEach(function(b){b.onclick=function(){delRes(b.dataset.dr);};});
+}
+function openAddRes(){
+  document.getElementById('resMoT').textContent='Add Link';
+  document.getElementById('resId').value='';
+  ['resTitle','resDesc','resUrl','resIcon'].forEach(function(i){document.getElementById(i).value='';});
+  document.getElementById('resCol').value='rib';
+  document.getElementById('resMo').classList.add('open');
+}
+function editRes(id){
+  var r=ress.find(function(x){return x.id===id;});if(!r)return;
+  document.getElementById('resMoT').textContent='Edit Link';
+  document.getElementById('resId').value=id;
+  document.getElementById('resTitle').value=r.t;
+  document.getElementById('resDesc').value=r.d;
+  document.getElementById('resUrl').value=r.u;
+  document.getElementById('resIcon').value=r.i;
+  document.getElementById('resCol').value=r.c;
+  document.getElementById('resMo').classList.add('open');
+}
+function saveRes(){
+  var t=document.getElementById('resTitle').value.trim();
+  var u=document.getElementById('resUrl').value.trim();
+  if(!t||!u){alert('Please fill in title and URL.');return;}
+  var id=document.getElementById('resId').value;
+  var data={t:t,d:document.getElementById('resDesc').value.trim(),u:u,i:document.getElementById('resIcon').value||'&#128279;',c:document.getElementById('resCol').value,order:Date.now()};
+  closeM('resMo');toast('Saving...');
+  var ref=id?db.collection('resources').doc(id):db.collection('resources').doc();
+  ref.set(data).then(function(){
+    data.id=ref.id;
+    if(id){var i=ress.findIndex(function(x){return x.id===id;});if(i>-1)ress[i]=data;}else{ress.push(data);}
+    renderRes();toast(id?'Link updated!':'Link added!');
+  }).catch(function(e){toast('Error saving.');console.warn(e);});
+}
+function delRes(id){
+  if(!confirm('Delete this link?'))return;
+  toast('Deleting...');
+  db.collection('resources').doc(id).delete().then(function(){
+    ress=ress.filter(function(r){return r.id!==id;});
+    renderRes();toast('Link deleted.');
+  }).catch(function(e){toast('Error deleting.');console.warn(e);});
+}
+
+/* SEND MESSAGE */
+var sb=document.getElementById('sendBtn');
+sb.href='#';
+function prepSend(ev){
+  var name=document.getElementById('mN').value.trim();
+  var body=document.getElementById('mB').value.trim();
+  if(!name||!body){ev.preventDefault();alert('Please enter your name and message.');return;}
+  var em=document.getElementById('mE').value.trim();
+  var sub=document.getElementById('mS').value.trim()||'Message from Class Website';
+  var full='From: '+name+(em?'\nReply-to: '+em:'')+'\n\n'+body;
+  sb.href='ma'+'ilto:'+E+'?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(full);
+}
+sb.addEventListener('mousedown',prepSend);
+sb.addEventListener('touchstart',prepSend);
+
+/* LOGIN */
+function openLogin(){
+  document.getElementById('loginPw').value='';
+  document.getElementById('loginErr').style.display='none';
+  document.getElementById('loginMo').classList.add('open');
+  setTimeout(function(){document.getElementById('loginPw').focus();},100);
+}
+function submitLogin(){
+  if(document.getElementById('loginPw').value===PW){
+    closeM('loginMo');toggleEdit();
+  }else{
+    document.getElementById('loginErr').style.display='block';
+    document.getElementById('loginPw').value='';
+    document.getElementById('loginPw').focus();
+  }
+}
+
+/* MODALS */
+function closeM(id){document.getElementById(id).classList.remove('open');}
+function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}
+document.querySelectorAll('.mo').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('open');});});
+
+/* EMAIL */
+document.getElementById('siEmail').textContent=E;
+document.getElementById('emlA').textContent=E;
+document.getElementById('emlA').href='ma'+'ilto:'+E;
+document.getElementById('emlB').href='ma'+'ilto:'+E;
+document.getElementById('emlB').textContent='Email Me Directly';
+
+/* WIRE UP */
+document.getElementById('goHome').onclick=function(){showPg(0);};
+document.getElementById('n0').onclick=function(){showPg(0);};
+document.getElementById('n1').onclick=function(){showPg(1);};
+document.getElementById('n2').onclick=function(){showPg(2);};
+document.getElementById('n3').onclick=function(){showPg(3);};
+document.getElementById('hE').onclick=function(){showPg(1);};
+document.getElementById('hM').onclick=function(){showPg(2);};
+document.getElementById('cE').onclick=function(){showPg(1);};
+document.getElementById('cM').onclick=function(){showPg(2);};
+document.getElementById('cR').onclick=function(){showPg(3);};
+document.getElementById('addEvt').onclick=openAddEvt;
+document.getElementById('addRes').onclick=openAddRes;
+document.getElementById('evtMoS').onclick=saveEvt;
+document.getElementById('evtMoX').onclick=function(){closeM('evtMo');};
+document.getElementById('evtMoC').onclick=function(){closeM('evtMo');};
+document.getElementById('resMoS').onclick=saveRes;
+document.getElementById('resMoX').onclick=function(){closeM('resMo');};
+document.getElementById('resMoC').onclick=function(){closeM('resMo');};
+document.getElementById('footerEditBtn').onclick=function(){if(editMode){toggleEdit();}else{openLogin();}};
+document.getElementById('loginSubmit').onclick=submitLogin;
+document.getElementById('loginCancel').onclick=function(){closeM('loginMo');};
+document.getElementById('loginClose').onclick=function(){closeM('loginMo');};
+document.getElementById('loginPw').addEventListener('keydown',function(e){if(e.key==='Enter')submitLogin();});
+
+/* INIT */
+fbLoad();
+})();
+</script>
+</body>
+</html>
